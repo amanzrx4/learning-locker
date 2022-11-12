@@ -71,4 +71,4 @@ Vocational Education and Training (VET) is an important element of the nation's 
 
 ### - Minutes of the Meeting
 ---
-  - Review meeting of Vocational Department held on 11th April, 2011 (22 KB) 
+  - Review meeting of Vocational Department held on 11th April, 2011
