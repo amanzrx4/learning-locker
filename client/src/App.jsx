@@ -9,6 +9,8 @@ import { AuthContextProvider } from "./context/authContext";
 import Intro from "./components/Intro";
 import Layout from "./components/Layout";
 import { ThemeProvider } from "@mui/material";
+import Explore from "./components/Explore";
+import Home from "./components/Home";
 function App() {
   const theme = useTheme();
 
@@ -18,8 +20,12 @@ function App() {
         <Layout>
           <BrowserRouter>
             <h1>Learning locker</h1>
-            <Login />
+            {/* <Login /> */}
             <Routes>
+              <Route path="/" element={<Home />} />
+
+              <Route path="/explore" element={<Explore />} />
+
               <Route
                 path="/api/auth/google/callback"
                 element={<GoogleProviderAuthCallback />}
