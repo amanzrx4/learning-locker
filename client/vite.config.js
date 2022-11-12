@@ -1,7 +1,16 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import Markdown from "@pity/vite-plugin-react-markdown";
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()]
-})
+  plugins: [
+    react(),
+    Markdown({
+      wrapperComponentName: "ReactMarkdown",
+      // wrapperComponentPath: "./src/components/page",
+      // importComponentsPath: {
+      //   ReactTest: "./src/components/pages/mdtest",
+      // },
+    }),
+  ],
+});
