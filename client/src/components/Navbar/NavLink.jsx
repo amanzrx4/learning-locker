@@ -6,10 +6,16 @@ import "./navbar.css";
 import NavLinkProps from "./NavLinkProps";
 function NavLink() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="navbar">
-      <LinkContainer to="/" >
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      bg="light"
+      variant="light"
+      className="navbar"
+    >
+      <LinkContainer to="/">
         <Navbar.Brand href="#home" className="navbar_img">
-       <p>Learning Locker</p>
+          <p>Learning Locker</p>
         </Navbar.Brand>
       </LinkContainer>
 
@@ -18,14 +24,24 @@ function NavLink() {
         <Nav className="m-auto">
           <NavLinkProps link="/aboutus" name="About us" />
           <NavLinkProps link="/services" name="Services" />
-          <NavLinkProps link="/classes" name="Classes" />
+          <div className="dropdown">
+            <NavLinkProps link="/classes" name="Classes" />
+            <div className="dropdown-content">
+              <NavLinkProps link="class1" name="class1" />
+              <NavLinkProps link="class2" name="class2" />
+              <NavLinkProps link="class3" name="class3" />
+            </div>
+          </div>
           <NavLinkProps link="/academic" name="Academic" />
           <NavLinkProps link="/contactus" name="Contact us" />
         </Nav>
         <Nav>
-          <Nav.Link href="#login" link="/login">
-            <button className="navbar_button">Login</button>
-          </Nav.Link>
+          {/* <LinkContainer to="/login"> */}
+            {" "}
+            <Nav.Link>
+              <button className="navbar_button">Login</button>
+            </Nav.Link>
+          {/* </LinkContainer> */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

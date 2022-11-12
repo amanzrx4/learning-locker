@@ -21,12 +21,9 @@ function App() {
       {/* <Login /> */}
       <BrowserRouter>
         <Routes>
-          
           {" "}
-           
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LoginHere />} />
-       
           <Route
             path="*"
             element={
