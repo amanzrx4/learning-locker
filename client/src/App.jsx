@@ -19,7 +19,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Layout>
           <BrowserRouter>
-            <h1>Learning locker</h1>
+            {/* <h1>Learning locker</h1> */}
             {/* <Login /> */}
             <Routes>
               <Route path="/" element={<Home />} />
