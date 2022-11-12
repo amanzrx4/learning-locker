@@ -1,39 +1,35 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import NavbarProps from "./NavbarProps";
+import { Navbar, Nav } from "react-bootstrap";
 
-const NavLink= () => {
+import "./navbar.css";
+import NavLinkProps from "./NavLinkProps";
+function NavLink() {
   return (
-    <Navbar bg="light" expand="sm" className="navbar_link">
-      <LinkContainer to="/">
-        <Navbar.Brand>
-          {" "}
-          <a className="navbar-brand" href="/#">
-            <div>
-              <img
-                src="\image/logo.jpeg"
-                style={{
-                  height: "50px",                  
-                }}
-                alt="logo of a company"
-              />
-            </div>
-          </a>
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="navbar">
+      <LinkContainer to="/" >
+        <Navbar.Brand href="#home" className="navbar_img">
+       <p>Learning Locker</p>
         </Navbar.Brand>
-      </LinkContainer >
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="m-auto navbar-nav">
-          <NavbarProps link="/" name="Home" />
-          <NavbarProps link="/about" name="About" />
-          <NavbarProps link="/service" name="Service" />
-          <NavbarProps link="/works" name="Works" />
-          <NavbarProps link="/contactus" name="Contact us" />
+      </LinkContainer>
+
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav navbar_list">
+        <Nav className="m-auto">
+          <NavLinkProps link="/aboutus" name="About us" />
+          <NavLinkProps link="/services" name="Services" />
+          <NavLinkProps link="/classes" name="Classes" />
+          <NavLinkProps link="/academic" name="Academic" />
+          <NavLinkProps link="/contactus" name="Contact us" />
+        </Nav>
+        <Nav>
+          <Nav.Link href="#login" link="/login">
+            <button className="navbar_button">Login</button>
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
   );
-};
+}
 
 export default NavLink;

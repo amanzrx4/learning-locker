@@ -12,12 +12,12 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import Home from "./pages/Home";
+import LoginHere from "./pages/LoginHere";
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className="App">
-      <h1>Learning locker</h1>
       {/* <Login /> */}
       <BrowserRouter>
         <Routes>
@@ -25,7 +25,7 @@ function App() {
           {" "}
            
           <Route path="/" element={<Home />} />
-          {/* <Route path="/about" element={<About />} /> */}
+          <Route path="/login" element={<LoginHere />} />
        
           <Route
             path="*"
