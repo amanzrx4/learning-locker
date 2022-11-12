@@ -1,7 +1,10 @@
 import React from "react";
+import { StyledBox } from "./Academic";
 
 const DeptAdvisoryCommittee = () => {
-  return <div>DeptAdvisoryCommittee</div>;
+  return <StyledBox>
+    
+  </StyledBox>;
 };
 
 export default DeptAdvisoryCommittee;

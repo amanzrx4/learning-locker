@@ -55,7 +55,6 @@ const Academic = () => {
         <ul>
           <li>
             <NavLink to="advisory">
-              {" "}
               Academic - Departmental Advisory Board
             </NavLink>
           </li>
