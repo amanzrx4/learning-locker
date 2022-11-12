@@ -11,6 +11,16 @@ import Layout from "./components/Layout";
 import { ThemeProvider } from "@mui/material";
 import Explore from "./components/Explore";
 import Home from "./components/Home";
+import NiosPortal from "./components/NiosPortal.jsx";
+import Academic from "./components/routes/Academic/Academic";
+import { academicData } from "./components/routes/Academic/data";
+import OBE from "./components/routes/Academic/OBE";
+import Secondary from "./components/routes/Academic/OBE/SecondaryCourse";
+import SeniorSecondary from "./components/routes/Academic/OBE/SeniorSecondary";
+import DeptAdvisoryCommittee from "./components/routes/Academic/DeptAdvisoryCommittee";
+import Counsil from "./components/routes/Academic/Counsil";
+import Training from "./components/routes/Academic/Training";
+
 function App() {
   const theme = useTheme();
 
@@ -23,8 +33,24 @@ function App() {
             {/* <Login /> */}
             <Routes>
               <Route path="/" element={<Home />} />
-
               <Route path="/explore" element={<Explore />} />
+              <Route path="nios">
+                <Route index element={<NiosPortal />} />
+                <Route path="academic">
+                  <Route index element={<Academic />} />
+                  <Route path="obe">
+                    <Route index element={<OBE />} />
+                    <Route path="secondary" element={<Secondary />} />
+                    <Route
+                      path="seniorSecondary"
+                      element={<SeniorSecondary />}
+                    />
+                  </Route>
+                  <Route path="advisory" element={<DeptAdvisoryCommittee />} />
+                  <Route path="counsil" element={<Counsil />} />
+                  <Route path="training" element={<Training />} />
+                </Route>
+              </Route>
 
               <Route
                 path="/api/auth/google/callback"

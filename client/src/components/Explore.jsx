@@ -3,17 +3,35 @@ import React from "react";
 import { Box } from "@mui/system";
 import { alpha, styled } from "@mui/material/styles";
 import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
-
+import { NavLink } from "react-router-dom";
 const items = [
   {
     name: "CURRICULUM",
     route: "chat",
-    desc: "Chat room for the class",
+    desc: "Explore the NIOS curriculum",
+    icon: <SchoolRoundedIcon fontSize="large" />,
+  },
+  {
+    name: "LEARN",
+    route: "chat",
+    desc: "Learn from the videos",
+    icon: <SchoolRoundedIcon fontSize="large" />,
+  },
+  {
+    name: "CHAT",
+    route: "/nios",
+    desc: "Chat with fellow learners",
+    icon: <SchoolRoundedIcon fontSize="large" />,
+  },
+  {
+    name: "NIOS",
+    route: "/nios",
+    desc: "Explore everything NIOS",
     icon: <SchoolRoundedIcon fontSize="large" />,
   },
 ];
 
-const StyledBox = styled(Box)(({ theme }) => ({
+export const StyledBox = styled(Box)(({ theme }) => ({
   padding: 50,
   border: 4,
   borderRadius: 10,
@@ -46,10 +64,10 @@ const StyledBox = styled(Box)(({ theme }) => ({
 const Explore = () => {
   return (
     <Grid container spacing={4} padding={4}>
-      <Grid item xs={4}>
-        {items.map((item) => {
-          const { name, route, desc, icon } = item;
-          return (
+      {items.map((item) => {
+        const { name, route, desc, icon } = item;
+        return (
+          <Grid item xs={4} key={name} component={NavLink} to={route}>
             <StyledBox>
               {icon}
               <Typography
@@ -59,13 +77,13 @@ const Explore = () => {
                 }}
                 variant="h4"
               >
-                {name}
+                {name.toUpperCase()}
               </Typography>
               <Typography variant="h6">{desc}</Typography>
             </StyledBox>
-          );
-        })}
-      </Grid>
+          </Grid>
+        );
+      })}
 
       {/* <Grid item xs={4}>
         <StyledBox sx={{ border: 2 }}></StyledBox>
